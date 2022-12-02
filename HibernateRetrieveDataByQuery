@@ -1,0 +1,19 @@
+public class Main {
+
+        public static void main(String[] args) {
+            Configuration cfg = new Configuration();
+            cfg.configure();
+            SessionFactory sessionFactory =
+                    cfg.buildSessionFactory();
+            Session session = sessionFactory.openSession();
+            session.beginTransaction();
+
+            List<Student> studentList =
+                    session.createQuery("FROM Student " ,Student.class).list();
+            for (Student student : studentList) {
+                System.out.println(student.getName());
+            }
+            session.getTransaction().commit();
+            session.close();
+        }
+    }
