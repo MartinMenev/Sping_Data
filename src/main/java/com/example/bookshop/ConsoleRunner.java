@@ -18,20 +18,18 @@ public class ConsoleRunner implements CommandLineRunner {
     private final BookService bookService;
     private final AuthorService authorService;
 
-    private final SeedService seedService;
 
     @Autowired
-    public ConsoleRunner(BookService bookService, AuthorService authorService, SeedService seedService) {
+    public ConsoleRunner(BookService bookService, AuthorService authorService) {
 
         this.bookService = bookService;
         this.authorService = authorService;
-        this.seedService = seedService;
         this.scanner = new Scanner (System.in);
     }
 
     @Override
     public void run(String... args) throws Exception {
-        this.seedService.seeAllData();
+
 
 
 
