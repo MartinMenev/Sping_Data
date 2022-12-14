@@ -3,7 +3,9 @@ package com.example.bookshop.repositories;
 import com.example.bookshop.models.AgeRestriction;
 import com.example.bookshop.models.Book;
 import com.example.bookshop.models.EditionType;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -27,7 +29,9 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     @Query("select count(b) from Book b where length(b.title) > :number ")
    int countBookByTitleIsGreaterThan(int number);
 
-
-    Optional<List<Book>>
+    @Modifying
+    @Transactional
+    @Query ("update Book b set b.copies = b.copies + :increaseNumber where b.releaseDate > :releaseDate")
+    int updateBooksCopiesWithSpecificAuthor(Long id, LocalDate releaseDate);
 
 }

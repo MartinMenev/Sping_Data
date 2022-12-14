@@ -43,7 +43,7 @@ public class Book {
     @Column (length = 50, nullable = false)
     private String title;
 
-    @ManyToOne (cascade = CascadeType.DETACH)
+    @ManyToOne (cascade = CascadeType.ALL)
     private Author author;
 
     @ManyToMany (cascade = CascadeType.DETACH)

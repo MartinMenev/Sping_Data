@@ -2,6 +2,8 @@ package com.example.bookshop.services;
 
 import com.example.bookshop.models.AgeRestriction;
 import com.example.bookshop.models.Book;
+import jakarta.transaction.Transactional;
+import org.springframework.data.jpa.repository.Modifying;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -25,5 +27,8 @@ public interface BookService {
     List<Book> findBooksByTitleContaining(String text);
 
     int countBookByTitleIsGreaterThan(int number);
+
+
+    int updateBooksCopiesWithSpecificAuthor(Long id, LocalDate releaseDate);
 
 }

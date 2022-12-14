@@ -63,5 +63,10 @@ public class BookServiceImpl implements BookService {
         return bookRepository.countBookByTitleIsGreaterThan(number);
     }
 
+    @Override
+    public int updateBooksCopiesWithSpecificAuthor(Long id, LocalDate releaseDate) {
+        return bookRepository.updateBooksCopiesWithSpecificAuthor(id, releaseDate);
+    }
+
 
 }
