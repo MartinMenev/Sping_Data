@@ -1,5 +1,6 @@
 package com.example.bookshop.services;
 
+import com.example.bookshop.models.AgeRestriction;
 import com.example.bookshop.models.Book;
 import com.example.bookshop.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +32,12 @@ public class BookServiceImpl implements BookService {
         return bookRepository.count() > 0;
     }
 
-
-
-
+    @Override
+    public List<Book> findBooksByAgeRestriction(String restriction) {
+        AgeRestriction input = AgeRestriction.valueOf(restriction.toUpperCase());
+        return bookRepository.findBooksByAgeRestriction(input)
+                .orElseThrow(NoSuchElementException::new);
+    }
 
 
 }

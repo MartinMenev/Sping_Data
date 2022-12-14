@@ -1,5 +1,6 @@
 package com.example.bookshop;
 
+import com.example.bookshop.models.Book;
 import com.example.bookshop.services.AuthorService;
 import com.example.bookshop.services.BookService;
 import com.example.bookshop.services.CategoryService;
@@ -29,6 +30,12 @@ public class ConsoleRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        String ageRestriction = scanner.nextLine();
+
+//        bookService.findBooksByAgeRestriction(ageRestriction)
+//                .stream()
+//                .map(Book::getTitle)
+//                .forEach(System.out::println);
 
 
 

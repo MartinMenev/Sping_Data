@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
 @Getter
 @Setter
@@ -47,6 +48,8 @@ public class Book {
 
     @ManyToMany (cascade = CascadeType.DETACH)
     private Set<Category> categories;
+
+
 
     public void setId(Long id) {
         this.id = id;
