@@ -29,6 +29,6 @@ public interface BookService {
     int countBookByTitleIsGreaterThan(int number);
 
 
-    int updateBooksCopiesWithSpecificAuthor(Long id, LocalDate releaseDate);
+    int updateBooksCopiesWithSpecificAuthor(int increaseNumber, LocalDate releaseDate);
 
 }

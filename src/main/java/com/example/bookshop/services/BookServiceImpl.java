@@ -64,8 +64,8 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public int updateBooksCopiesWithSpecificAuthor(Long id, LocalDate releaseDate) {
-        return bookRepository.updateBooksCopiesWithSpecificAuthor(id, releaseDate);
+    public int updateBooksCopiesWithSpecificAuthor(int increaseNumber, LocalDate releaseDate) {
+        return bookRepository.updateBooksCopiesWithSpecificAuthor(increaseNumber, releaseDate);
     }
 
 
