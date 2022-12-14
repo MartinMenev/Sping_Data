@@ -10,6 +10,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Scanner;
 
 @Component
@@ -30,14 +33,36 @@ public class ConsoleRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        String ageRestriction = scanner.nextLine();
+ //    String text = scanner.nextLine();
 
+
+
+//
 //        bookService.findBooksByAgeRestriction(ageRestriction)
 //                .stream()
 //                .map(Book::getTitle)
 //                .forEach(System.out::println);
 
 
+//        bookService.findBooksByCopiesLessThan(numberOfCopies)
+//                .stream()
+//                .map(Book::getTitle)
+//                .forEach(System.out::println);
+
+
+//        bookService.findBooksByReleaseDateNotLike(LocalDate.parse("1992-04-12"))
+//                .stream()
+//                .map(Book::getTitle)
+//                .forEach(System.out::println);
+
+
+//        bookService.findBooksByTitleContaining(text)
+//                .stream()
+//                .map(Book::getTitle)
+//                .forEach(System.out::println);
+
+//        int number = Integer.parseInt(scanner.nextLine());
+//        System.out.println(bookService.countBookByTitleIsGreaterThan(number));
 
 
     }

@@ -4,6 +4,8 @@ import com.example.bookshop.models.AgeRestriction;
 import com.example.bookshop.models.Book;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,5 +17,13 @@ public interface BookService {
     boolean isDataSeeded();
 
     List<Book> findBooksByAgeRestriction(String ageRestriction);
+
+    List<Book> findBooksByCopiesLessThan(int copies);
+
+    List<Book> findBooksByReleaseDateNotLike(LocalDate date);
+
+    List<Book> findBooksByTitleContaining(String text);
+
+    int countBookByTitleIsGreaterThan(int number);
 
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -37,6 +38,29 @@ public class BookServiceImpl implements BookService {
         AgeRestriction input = AgeRestriction.valueOf(restriction.toUpperCase());
         return bookRepository.findBooksByAgeRestriction(input)
                 .orElseThrow(NoSuchElementException::new);
+    }
+
+    @Override
+    public List<Book> findBooksByCopiesLessThan(int copies) {
+        return bookRepository.findBooksByCopiesLessThan(copies)
+                .orElseThrow(NoSuchElementException::new);
+    }
+
+    @Override
+    public List<Book> findBooksByReleaseDateNotLike(LocalDate date) {
+        return bookRepository.findBooksByReleaseDateNotLike(date)
+                .orElseThrow(NoSuchElementException::new);
+    }
+
+    @Override
+    public List<Book> findBooksByTitleContaining(String text) {
+        return bookRepository.findBooksByTitleContaining(text)
+                .orElseThrow(NoSuchElementException::new);
+    }
+
+    @Override
+    public int countBookByTitleIsGreaterThan(int number) {
+        return bookRepository.countBookByTitleIsGreaterThan(number);
     }
 
 

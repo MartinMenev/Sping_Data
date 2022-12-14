@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,6 +18,16 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 
     Optional<List<Book>> findBooksByAgeRestriction(AgeRestriction ageRestriction);
 
+    Optional<List<Book>> findBooksByCopiesLessThan(int copies);
 
+    Optional<List<Book>> findBooksByReleaseDateNotLike(LocalDate date);
+
+    Optional<List<Book>> findBooksByTitleContaining(String text);
+
+    @Query("select count(b) from Book b where length(b.title) > :number ")
+   int countBookByTitleIsGreaterThan(int number);
+
+
+    Optional<List<Book>>
 
 }
